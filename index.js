@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser')
 const rootRouter = require('./routes/root')
 const clucksRouter = require('./routes/clucks')
 const { request, response } = require('express')
+const knex = require('./db/client')
 
 const app = express()
 app.set("view engine", "ejs")
@@ -40,8 +41,41 @@ app.use((request, response, next) => {
 })
 
 
+app.get('/', (request, response) => {
+  response.render('new_cluck')
+})
+
+app.get('/show', (request, response) => { // The route is prepended already with /articles
+  knex
+  .select('*')
+  .from('clucks')
+  .then(data => {
+    response.render('show', {clucks: data})
+  })
+})
+
+
+app.post('/show', (request, response) => { // The route
+  const { content, image } = request.body
+
+  knex('clucks')
+    .insert({
+      content,
+      image,
+     
+    }, "*") 
+    .then(data => {
+      //response.send(data)
+      response.redirect('/show') 
+    })
+})
+
+
+
 app.use('/', rootRouter)
-//       app.use('/clucks', clucksRouter)
+app.use('/clucks', clucksRouter)
+
+
 const PORT = process.env.PORT || 3000
 const ADDRESS = 'localhost' // 127.0.0.1
 

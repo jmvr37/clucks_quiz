@@ -4,9 +4,6 @@
   <meta charset="UTF-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-  <!-- Bootstrap is now served from the "public" directory -->
-  <!-- The "defer" attribute waits for the document to load before running JS -->
   <link rel="stylesheet" href="/css/bootstrap.min.css"/>
   <script defer src="/js/bootstrap.min.js"></script>
 
@@ -15,7 +12,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="/">
-            <img src="/assets/cluck.png"  height="50px"></a>
+            <img src="https://www.google.com/url?sa=i&url=http%3A%2F%2Fclipart-library.com%2Ffree%2Fchicken-silhouette-svg.html&psig=AOvVaw33Dp8wQDC8SuHXz5y1GWSK&ust=1615333310508000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKjUrtPvoe8CFQAAAAAdAAAAABAD"  height="90px" width="90px"/></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -23,13 +20,11 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="/show">Home </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/new_cluck">Cluck!</a>
             </li>
-           
-
           </ul>
           <% if (username) { %>
             <span class="me-3">Welcome, <%= username %> </span>
@@ -37,13 +32,11 @@
               <input class="btn btn-danger" type="submit" value="Sign Out">
             </form>
             <% } else { %>
-                <li>
-                    <a class="btn btn-success" type href="/sign_in">sign in</a>
-                </li>
-            <!-- <form class="d-flex" action="/sign_in" method="POST">
+                
+            <form class="d-flex" action="/sign_in" method="POST">
               <input class="form-control me-2" type="text" placeholder="Username" aria-label="Username" name="username" required>
               <input class="btn btn-success" type="submit" value="Sign In">
-            </form> -->
+            </form>
             <% } %>
         </div>
       </nav>

@@ -7,13 +7,17 @@ router.get('/hello_world', (request, response) => {
   response.send('<h1>Hello, World!</h1>')
 })
 
-router.get('/', (request, response) => {
-  response.render('welcome')
+
+
+router.get('/show', (request, response) => {
+  response.render('show')
 })
 
 router.get('/sign_in', (request, response) => {
     response.render('sign_in')
 })
+
+
 
 router.get('/new_cluck', (request, response) => {
     response.render('new_cluck')

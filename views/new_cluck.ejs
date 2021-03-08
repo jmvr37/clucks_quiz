@@ -1,3 +1,15 @@
 <%- include('./partials/header') %>
 <h1>new cluck</h1>
+
+<form action="/show" method="POST">
+    <div class="mb-3">
+        <label for="content" class="form-label">Content</label>
+        <textArea name="content" class="form-control" id="content" placeholder="Whatchoo clucking about?"type="text"></textArea>
+      </div>
+    <div class="mb-3">
+      <label for="image" class="form-label">Image Url</label>
+      <input name="image" type="text" class="form-control" id="image" placeholder="e.g. https://www.example.com/some.png" placeholder>
+    </div>
+    <button type="submit" class="btn btn-primary">Cluck!</button>
+  </form>
 <%- include('./partials/footer') %>

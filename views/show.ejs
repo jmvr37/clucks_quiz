@@ -1,0 +1,16 @@
+
+<%- include('./partials/header') %>
+
+<div class="list-group">
+  <h1>list of clucks</h1>
+  <% clucks.forEach(({image, content }) => { %>
+  <img style="width: 100px;" src="<%= image %>" />
+  <small><%= content %></small>
+  <% }) %>
+</div>
+
+<%- include('./partials/footer') %>
+
+
+
+
